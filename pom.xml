@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>pl.solr.ag</groupId>
 	<artifactId>ag-player-mongodb</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>MongoDB module for Action Generator</name>
 	<description>MongoDB module for Action Generator: https://github.com/sematext/ActionGenerator</description>
 	<url>http://solr.pl/</url>
