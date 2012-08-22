@@ -1,21 +1,111 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>pl.solr.ag</groupId>
-  <artifactId>ag-player-mongodb</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>MongoDB module for Action Generator</name>
-  <description>MongoDB module for Action Generator: https://github.com/sematext/ActionGenerator</description>
-  <url>http://solr.pl/</url>
-  <dependencies>
-  	<dependency>
-  		<groupId>com.sematext.ag</groupId>
-  		<artifactId>ag-player</artifactId>
-  		<version>0.1.3</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>org.mongodb</groupId>
-  		<artifactId>mongo-java-driver</artifactId>
-  		<version>2.8.0</version>
-  	</dependency>
-  </dependencies>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>pl.solr.ag</groupId>
+	<artifactId>ag-player-mongodb</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>MongoDB module for Action Generator</name>
+	<description>MongoDB module for Action Generator: https://github.com/sematext/ActionGenerator</description>
+	<url>http://solr.pl/</url>
+
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
+	</parent>
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.sematext.ag</groupId>
+			<artifactId>ag-player</artifactId>
+			<version>0.1.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+			<version>2.8.0</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.5</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<organization>
+		<name>Solr.pl</name>
+		<url>http://solr.pl/en/</url>
+	</organization>
+
+	<developers>
+		<developer>
+			<id>negativ</id>
+			<name>Marek Rogoziński</name>
+			<email>m.rogozinski@solr.pl</email>
+		</developer>
+	</developers>
+
+	<scm>
+		<url>https://github.com/solrpl/ag-player-mongodb</url>
+		<connection>scm:git:git@github.com:solrpl/ag-player-mongodb.git</connection>
+		<developerConnection>scm:git:git@github.com:solrpl/ag-player-mongodb.git</developerConnection>
+	</scm>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.8.1</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<configuration>
+					<configLocation>checkstyle.xml</configLocation>
+				</configuration>
+			</plugin>
+		</plugins>
+	</reporting>
+
 </project>
